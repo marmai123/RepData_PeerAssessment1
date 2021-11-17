@@ -6,6 +6,12 @@ output:
 ---
 
 
+```r
+knitr::opts_chunk$set(fig.path='Figs/')
+```
+
+
+
 ## Read in needed R-packages
 
 ```r
@@ -35,7 +41,7 @@ data_day <- aggregate(steps~date, data, sum, na.rm=TRUE)
 hist(data_day$steps, main = "Histogram of number of steps per day", xlab="Number of steps per day", breaks = 10)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](Figs/unnamed-chunk-3-1.png)<!-- -->
 
 Calculate and report the mean and median total number of steps taken per day.
 
@@ -70,7 +76,7 @@ data_meanint <- aggregate(steps~interval, data, mean, na.rm=TRUE)
 plot(data_meanint$interval, data_meanint$steps, type="l", xlab = "5-minute interval", ylab = "Average number of steps taken")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![](Figs/unnamed-chunk-6-1.png)<!-- -->
 
 
 Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
@@ -126,7 +132,7 @@ data_day_new <- aggregate(steps~date, data_new, sum, na.rm=TRUE)
 hist(data_day_new$steps, main = "Histogram of number of steps per day", xlab="Number of steps per day", breaks = 10)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+![](Figs/unnamed-chunk-10-1.png)<!-- -->
 
 Calculate and report the mean and median total number of steps taken per day.
 
@@ -206,7 +212,7 @@ ggplot(plot_data, aes(x=interval, y=steps)) +
              y = "Number of steps taken")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](Figs/unnamed-chunk-14-1.png)<!-- -->
 
 The step pattern is different on weekdays and weekends.
 
